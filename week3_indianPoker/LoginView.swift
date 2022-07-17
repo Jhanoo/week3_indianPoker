@@ -11,9 +11,9 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 struct LoginView: View {
-    @AppStorage("userId") var userId = (UserDefaults.standard.string(forKey: "userId") ?? "")
-    @AppStorage("username") var username = (UserDefaults.standard.string(forKey: "username") ?? "")
-    @AppStorage("userProfile") var userProfile = (UserDefaults.standard.string(forKey: "userProfile") ?? "")
+//    @AppStorage("userId") var userId = (UserDefaults.standard.string(forKey: "userId") ?? "")
+//    @AppStorage("username") var username = (UserDefaults.standard.string(forKey: "username") ?? "")
+//    @AppStorage("userProfile") var userProfile = (UserDefaults.standard.string(forKey: "userProfile") ?? "")
     @State private var needLogin: Bool = true
     @State private var login: Bool = false
     @State private var kakaoLogin: Bool = false

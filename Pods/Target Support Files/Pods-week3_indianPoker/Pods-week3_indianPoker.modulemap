@@ -1,0 +1,6 @@
+framework module Pods_week3_indianPoker {
+  umbrella header "Pods-week3_indianPoker-umbrella.h"
+
+  export *
+  module * { export * }
+}
