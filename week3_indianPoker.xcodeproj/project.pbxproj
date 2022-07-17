@@ -7,22 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0948F39D69999CD58BB3F8B8 /* Pods_week3_indianPoker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8E9A577090F828170B939B /* Pods_week3_indianPoker.framework */; };
+		4252CD092883C28C008C0C63 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4252CD082883C28C008C0C63 /* KakaoSDKAuth */; };
+		4252CD0B2883C28C008C0C63 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 4252CD0A2883C28C008C0C63 /* KakaoSDKCommon */; };
+		4252CD0D2883C28C008C0C63 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 4252CD0C2883C28C008C0C63 /* KakaoSDKUser */; };
+		4252CD102883D53A008C0C63 /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252CD0F2883D53A008C0C63 /* InitView.swift */; };
+		4252CD122883D583008C0C63 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252CD112883D583008C0C63 /* IntroView.swift */; };
+		4252CD142883D5B1008C0C63 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252CD132883D5B1008C0C63 /* LoginView.swift */; };
+		4252CD162883D5FB008C0C63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252CD152883D5FB008C0C63 /* MainView.swift */; };
+		4252CD182883DB50008C0C63 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252CD172883DB50008C0C63 /* SocketManager.swift */; };
+		428BCF612883F82D008A5FC3 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF602883F82D008A5FC3 /* request.swift */; };
+		428BCF632883FAA1008A5FC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF622883FAA1008A5FC3 /* Constants.swift */; };
+		428BCF6728844FF9008A5FC3 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF6628844FF9008A5FC3 /* DataType.swift */; };
 		93D1DA012883B35400B5BD5A /* week3_indianPokerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1DA002883B35400B5BD5A /* week3_indianPokerApp.swift */; };
-		93D1DA032883B35400B5BD5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1DA022883B35400B5BD5A /* ContentView.swift */; };
 		93D1DA052883B35500B5BD5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D1DA042883B35500B5BD5A /* Assets.xcassets */; };
 		93D1DA082883B35500B5BD5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D1DA072883B35500B5BD5A /* Preview Assets.xcassets */; };
-		93D1DA0A2883B35500B5BD5A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1DA092883B35500B5BD5A /* Persistence.swift */; };
 		93D1DA0D2883B35500B5BD5A /* week3_indianPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93D1DA0B2883B35500B5BD5A /* week3_indianPoker.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4252CD0E2883D044008C0C63 /* week3-indianPoker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "week3-indianPoker-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4252CD0F2883D53A008C0C63 /* InitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
+		4252CD112883D583008C0C63 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		4252CD132883D5B1008C0C63 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4252CD152883D5FB008C0C63 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4252CD172883DB50008C0C63 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		428BCF602883F82D008A5FC3 /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
+		428BCF622883FAA1008A5FC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		428BCF6628844FF9008A5FC3 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		49B88A0B865A716AD1D44781 /* Pods-week3_indianPoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-week3_indianPoker.debug.xcconfig"; path = "Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker.debug.xcconfig"; sourceTree = "<group>"; };
+		57B6FD751B207A1D99195556 /* Pods-week3_indianPoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-week3_indianPoker.release.xcconfig"; path = "Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker.release.xcconfig"; sourceTree = "<group>"; };
 		93D1D9FD2883B35400B5BD5A /* week3_indianPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week3_indianPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D1DA002883B35400B5BD5A /* week3_indianPokerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week3_indianPokerApp.swift; sourceTree = "<group>"; };
-		93D1DA022883B35400B5BD5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		93D1DA042883B35500B5BD5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93D1DA072883B35500B5BD5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		93D1DA092883B35500B5BD5A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		93D1DA0C2883B35500B5BD5A /* week3_indianPoker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = week3_indianPoker.xcdatamodel; sourceTree = "<group>"; };
+		AA8E9A577090F828170B939B /* Pods_week3_indianPoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_week3_indianPoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +50,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4252CD0B2883C28C008C0C63 /* KakaoSDKCommon in Frameworks */,
+				4252CD092883C28C008C0C63 /* KakaoSDKAuth in Frameworks */,
+				4252CD0D2883C28C008C0C63 /* KakaoSDKUser in Frameworks */,
+				0948F39D69999CD58BB3F8B8 /* Pods_week3_indianPoker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		428BCF642883FAA9008A5FC3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				428BCF622883FAA1008A5FC3 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		428BCF652883FD47008A5FC3 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				4252CD172883DB50008C0C63 /* SocketManager.swift */,
+				428BCF602883F82D008A5FC3 /* request.swift */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		768A9DC482A76F165D54CB75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA8E9A577090F828170B939B /* Pods_week3_indianPoker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		93D1D9F42883B35400B5BD5A = {
 			isa = PBXGroup;
 			children = (
 				93D1D9FF2883B35400B5BD5A /* week3_indianPoker */,
 				93D1D9FE2883B35400B5BD5A /* Products */,
+				768A9DC482A76F165D54CB75 /* Frameworks */,
+				A12762544F342F1A3DB873FA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,12 +106,18 @@
 		93D1D9FF2883B35400B5BD5A /* week3_indianPoker */ = {
 			isa = PBXGroup;
 			children = (
-				93D1DA002883B35400B5BD5A /* week3_indianPokerApp.swift */,
-				93D1DA022883B35400B5BD5A /* ContentView.swift */,
-				93D1DA042883B35500B5BD5A /* Assets.xcassets */,
-				93D1DA092883B35500B5BD5A /* Persistence.swift */,
+				4252CD0E2883D044008C0C63 /* week3-indianPoker-Info.plist */,
 				93D1DA0B2883B35500B5BD5A /* week3_indianPoker.xcdatamodeld */,
+				93D1DA002883B35400B5BD5A /* week3_indianPokerApp.swift */,
+				428BCF652883FD47008A5FC3 /* server */,
+				4252CD112883D583008C0C63 /* IntroView.swift */,
+				4252CD132883D5B1008C0C63 /* LoginView.swift */,
+				4252CD152883D5FB008C0C63 /* MainView.swift */,
+				4252CD0F2883D53A008C0C63 /* InitView.swift */,
+				428BCF642883FAA9008A5FC3 /* Utils */,
+				93D1DA042883B35500B5BD5A /* Assets.xcassets */,
 				93D1DA062883B35500B5BD5A /* Preview Content */,
+				428BCF6628844FF9008A5FC3 /* DataType.swift */,
 			);
 			path = week3_indianPoker;
 			sourceTree = "<group>";
@@ -73,6 +130,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A12762544F342F1A3DB873FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49B88A0B865A716AD1D44781 /* Pods-week3_indianPoker.debug.xcconfig */,
+				57B6FD751B207A1D99195556 /* Pods-week3_indianPoker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,15 +146,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93D1DA102883B35500B5BD5A /* Build configuration list for PBXNativeTarget "week3_indianPoker" */;
 			buildPhases = (
+				E997E0A387899432C7DAF02B /* [CP] Check Pods Manifest.lock */,
 				93D1D9F92883B35400B5BD5A /* Sources */,
 				93D1D9FA2883B35400B5BD5A /* Frameworks */,
 				93D1D9FB2883B35400B5BD5A /* Resources */,
+				B41D559C460359322A6A67A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = week3_indianPoker;
+			packageProductDependencies = (
+				4252CD082883C28C008C0C63 /* KakaoSDKAuth */,
+				4252CD0A2883C28C008C0C63 /* KakaoSDKCommon */,
+				4252CD0C2883C28C008C0C63 /* KakaoSDKUser */,
+			);
 			productName = week3_indianPoker;
 			productReference = 93D1D9FD2883B35400B5BD5A /* week3_indianPoker.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +190,9 @@
 				Base,
 			);
 			mainGroup = 93D1D9F42883B35400B5BD5A;
+			packageReferences = (
+				4252CD072883C28C008C0C63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = 93D1D9FE2883B35400B5BD5A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,14 +214,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B41D559C460359322A6A67A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E997E0A387899432C7DAF02B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-week3_indianPoker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93D1D9F92883B35400B5BD5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				93D1DA0D2883B35500B5BD5A /* week3_indianPoker.xcdatamodeld in Sources */,
-				93D1DA0A2883B35500B5BD5A /* Persistence.swift in Sources */,
-				93D1DA032883B35400B5BD5A /* ContentView.swift in Sources */,
+				428BCF6728844FF9008A5FC3 /* DataType.swift in Sources */,
+				4252CD162883D5FB008C0C63 /* MainView.swift in Sources */,
+				4252CD142883D5B1008C0C63 /* LoginView.swift in Sources */,
+				428BCF612883F82D008A5FC3 /* request.swift in Sources */,
+				4252CD102883D53A008C0C63 /* InitView.swift in Sources */,
+				4252CD122883D583008C0C63 /* IntroView.swift in Sources */,
+				428BCF632883FAA1008A5FC3 /* Constants.swift in Sources */,
+				4252CD182883DB50008C0C63 /* SocketManager.swift in Sources */,
 				93D1DA012883B35400B5BD5A /* week3_indianPokerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -257,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -269,15 +393,17 @@
 		};
 		93D1DA112883B35500B5BD5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49B88A0B865A716AD1D44781 /* Pods-week3_indianPoker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"week3_indianPoker/Preview Content\"";
-				DEVELOPMENT_TEAM = 5MMUAR6KN4;
+				DEVELOPMENT_TEAM = Q6CK9777WL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "week3-indianPoker-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -298,15 +424,17 @@
 		};
 		93D1DA122883B35500B5BD5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57B6FD751B207A1D99195556 /* Pods-week3_indianPoker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"week3_indianPoker/Preview Content\"";
-				DEVELOPMENT_TEAM = 5MMUAR6KN4;
+				DEVELOPMENT_TEAM = Q6CK9777WL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "week3-indianPoker-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -347,6 +475,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4252CD072883C28C008C0C63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4252CD082883C28C008C0C63 /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4252CD072883C28C008C0C63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		4252CD0A2883C28C008C0C63 /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4252CD072883C28C008C0C63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		4252CD0C2883C28C008C0C63 /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4252CD072883C28C008C0C63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		93D1DA0B2883B35500B5BD5A /* week3_indianPoker.xcdatamodeld */ = {
