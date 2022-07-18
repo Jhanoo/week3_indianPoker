@@ -19,19 +19,6 @@ struct LoginView: View {
     @State private var kakaoLogin: Bool = false
     @State private var guest: Bool = false
     
-    func saveAppStorage(_ user : User) {
-        // 내부 저장소 저장
-        if let encoded = try? JSONEncoder().encode(user) {
-            UserDefaults.standard.setValue(encoded, forKey: "user")
-        }
-//        // 내부 저장소에서 꺼내기
-//        if let savedData = UserDefaults.standard.object(forKey: "user") as? Data {
-//            if let savedObject = try? JSONDecoder().decode(User.self, from: savedData) {
-//                print(savedObject)
-//            }
-//        }
-    }
-    
     var body: some View {
         if (needLogin) {
             NavigationView{
@@ -78,9 +65,14 @@ struct LoginView: View {
                                         let user = User(id: String((tmpUser?.id)!), name: (tmpUser?.kakaoAccount?.profile?.nickname)!, profileImg : "\(String(describing: tmpUser?.kakaoAccount?.profile?.profileImageUrl))")
                                         // 내부 저장소 저장
                                         saveAppStorage(user)
+                                        // 전역 변수 저장
+                                        Constants.user = user
                                         // 서버로 전송
-                                        request("/auth/signin", "POST", ["id": user.id, "name": user.name, "profileImg": user.profileImg as Any]) { (success, data) in
-                                            print(data)
+                                        let userData = try? JSONEncoder().encode(user)
+                                        let jsonString = String(data: userData!, encoding: .utf8)
+                                        request("/auth/signup", "POST", ["user": jsonString as Any]) { (success, data) in
+                                            let output = try? JSONDecoder().decode(Response.self, from: data as! Data)
+                                            print(output?.result as Any)
                                             kakaoLogin = true
                                             needLogin = false
                                         }
@@ -99,9 +91,14 @@ struct LoginView: View {
                                         let user = User(id: String((tmpUser?.id)!), name: (tmpUser?.kakaoAccount?.profile?.nickname)!, profileImg : "\(String(describing: tmpUser?.kakaoAccount?.profile?.profileImageUrl))")
                                         // 내부 저장소 저장
                                         saveAppStorage(user)
+                                        // 전역 변수 저장
+                                        Constants.user = user
                                         // 서버로 전송
-                                        request("/auth/signin", "POST", ["id": user.id, "name": user.name, "profileImg": user.profileImg as Any]) { (success, data) in
-                                            print(data)
+                                        let userData = try? JSONEncoder().encode(user)
+                                        let jsonString = String(data: userData!, encoding: .utf8)
+                                        request("/auth/signup", "POST", ["user": jsonString as Any]) { (success, data) in
+                                            let output = try? JSONDecoder().decode(Response.self, from: data as! Data)
+                                            print(output?.result as Any)
                                             kakaoLogin = true
                                             needLogin = false
                                         }

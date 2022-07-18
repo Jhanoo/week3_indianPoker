@@ -10,6 +10,8 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
 
+var userGlobal : User = User(id: "default")
+
 struct InitView: View {
     @AppStorage("isFirst") var isFirst = UserDefaults.standard.bool(forKey: "isFirst")
     @State private var kakaoTokenValid = false
@@ -53,6 +55,16 @@ struct InitView: View {
                         // 메인 뷰로 이동
                         print("✅ token is valid")
                         kakaoTokenValid = true
+                        UserApi.shared.me { tmpUser, Error in
+                            request("/auth/signin", "POST", ["user": (tmpUser?.id)!]) { (success, data) in
+                                print(data)
+                                let output = try? JSONDecoder().decode(User.self, from: data as! Data)
+                                print(output as Any)
+                                Constants.user = output
+                                saveAppStorage(output!)
+                                kakaoTokenValid = true
+                            }
+                        }
                     }
                 }
                 UserDefaults.standard.set(false, forKey: "isFirst")

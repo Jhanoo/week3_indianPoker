@@ -14,9 +14,9 @@ let GREEN = 4
 let BLACK = 5
 
 struct User: Codable {
-    let id: String
-    var name: String = "default"
-    var profileImg: String? = nil
+    var id: String
+    var name: String = "null"
+    var profileImg: String = "null"
     var win: Int = 0
     var lose: Int = 0
     var money: Int = 0
@@ -34,7 +34,7 @@ struct User: Codable {
 
 struct Room: Identifiable, Codable {
     let id = UUID()
-//    let roomId: String
+    let roomId: String
     let host: User
     var participant: User?
     var title: String = "default"

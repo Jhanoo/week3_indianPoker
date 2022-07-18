@@ -13,6 +13,15 @@ struct Response: Codable {
     let message: String
 }
 
+//struct User: Codable {
+//    var id: String
+//    var name: String = "null"
+//    var profileImg: String = "null"
+//    var win: Int = 0
+//    var lose: Int = 0
+//    var money: Int = 0
+//    var chip: [Int] = [0,0,0,0,0,0]
+
 /* Body가 없는 요청 */
 func requestGet(url: String, completionHandler: @escaping (Bool, Any) -> Void) {
     
@@ -38,12 +47,13 @@ func requestGet(url: String, completionHandler: @escaping (Bool, Any) -> Void) {
             print("Error: HTTP request failed")
             return
         }
-        guard let output = try? JSONDecoder().decode(Response.self, from: data) else {
-            print("Error: JSON Data Parsing failed")
-            return
-        }
-        
-        completionHandler(true, output.result)
+//        guard let output = try? JSONDecoder().decode(Response.self, from: data) else {
+//            print("Error: JSON Data Parsing failed")
+//            return
+//        }
+
+//        completionHandler(true, output.result)
+        completionHandler(true, data)
     }.resume()
     
 }
@@ -77,12 +87,13 @@ func requestPost(url: String, method: String, param: [String: Any], completionHa
             print("Error: HTTP request failed")
             return
         }
-        guard let output = try? JSONDecoder().decode(Response.self, from: data) else {
-            print("Error: JSON Data Parsing failed")
-            return
-        }
-        
-        completionHandler(true, output.result)
+//        guard let output = try? JSONDecoder().decode(Response.self, from: data) else {
+//            print("Error: JSON Data Parsing failed")
+//            return
+//        }
+//
+//        completionHandler(true, output.result)
+        completionHandler(true, data)
     }.resume()
     
 }
