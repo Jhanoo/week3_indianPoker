@@ -56,12 +56,22 @@ struct InitView: View {
                         print("✅ token is valid")
                         kakaoTokenValid = true
                         UserApi.shared.me { tmpUser, Error in
-                            request("/auth/signin", "POST", ["user": (tmpUser?.id)!]) { (success, data) in
+                            request("/auth/signin", "POST", ["id": String((tmpUser?.id)!)]) { (success, data) in
                                 print(data)
+                                
+//                                let userData = try? JSONEncoder().encode(user)
+//                                let jsonString = String(data: userData!, encoding: .utf8)
+//                                request("/auth/signup", "POST", ["user": jsonString as Any]) { (success, data) in
+//                                    let output = try? JSONDecoder().decode(Response.self, from: data as! Data)
+//                                    print(output?.result as Any)
+//                                    kakaoLogin = true
+//                                    needLogin = false
+//                                }
                                 let output = try? JSONDecoder().decode(User.self, from: data as! Data)
                                 print(output as Any)
+                                print("djskfhgkjsdfhgkjlsdhfkgshdfk")
                                 Constants.user = output
-                                saveAppStorage(output!)
+//                                saveAppStorage(output!)
                                 kakaoTokenValid = true
                             }
                         }
