@@ -20,8 +20,8 @@ struct InitView: View {
             if isFirst {
                 IntroView()
             } else if kakaoTokenValid {
-//                MainView()
-                InGameView()
+                MainView()
+//                InGameView()
             } else {
                 LoginView()
                     .onOpenURL { url in
@@ -59,20 +59,10 @@ struct InitView: View {
                         UserApi.shared.me { tmpUser, Error in
                             request("/auth/signin", "POST", ["id": String((tmpUser?.id)!)]) { (success, data) in
                                 print(data)
-                                
-//                                let userData = try? JSONEncoder().encode(user)
-//                                let jsonString = String(data: userData!, encoding: .utf8)
-//                                request("/auth/signup", "POST", ["user": jsonString as Any]) { (success, data) in
-//                                    let output = try? JSONDecoder().decode(Response.self, from: data as! Data)
-//                                    print(output?.result as Any)
-//                                    kakaoLogin = true
-//                                    needLogin = false
-//                                }
                                 let output = try? JSONDecoder().decode(User.self, from: data as! Data)
-                                print(output as Any)
-                                print("djskfhgkjsdfhgkjlsdhfkgshdfk")
+                                print(output!.name)
                                 Constants.user = output
-//                                saveAppStorage(output!)
+                                saveAppStorage(output!)
                                 kakaoTokenValid = true
                             }
                         }

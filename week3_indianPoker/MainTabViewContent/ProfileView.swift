@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-private var user = User(id: "userSample00", name: "Sample00", win: 0, lose: 0, money: 0, chip: [0,0,0,0,0,0])
+private var user = User(id: "userSample00", name: "Sample00", win: 0, lose: 0, money: 0, chip: 0)
 
 struct ProfileView: View {
     

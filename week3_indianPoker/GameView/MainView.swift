@@ -15,11 +15,14 @@ struct MainView: View {
     
     @State private var isShowingPopOver = false
     
+    
     init() {
-        addSample()
+//        addSample()
         UITabBar.appearance().backgroundColor = .white
         UITabBar.appearance().unselectedItemTintColor = .black
     }
+    
+    
     
     var body: some View {
         TabView {

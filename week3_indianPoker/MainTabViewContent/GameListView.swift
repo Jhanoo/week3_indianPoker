@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameListView: View {
-    
+    @State var rooms : [Room] = []
     var body: some View {
         ZStack{
             VStack{
@@ -18,22 +18,46 @@ struct GameListView: View {
                 }
                 
             }
-            CreateRoomButton(title: "New game", iconName: "plus.circle")
+            CreateRoomButton(rooms: $rooms, title: "New game", iconName: "plus.circle")
         }
-        
+        .onAppear {
+            SocketIOManager.shared.socket.on("rooms") { dataArray, ack in
+                print("22222222222")
+                
+//                for i in dataArray {
+//                    let json = try? JSONSerialization.data(withJSONObject: i, options: .fragmentsAllowed)
+//                    let jsonData = try? JSONDecoder().decode(RoomData.self, from: json!)
+//                    print(jsonData)
+//                }
+                
+                let jsonData = try? JSONDecoder().decode(RoomsArr.self, from: dataArray[0] as? RoomsArr )
+                print(jsonData)
+//                let output = try? JSONDecoder().decode(RoomsArr.self, from: dataArray[0] as! Data)
+//                    print(output)
+//                var rooms : [RoomData] = []
+//                for i in dataArray {
+//                    let output = try? JSONDecoder().decode(dataArray, from: i)
+//                    rooms.append(output!)
+//                }
+//                print(rooms)
+//                print(dataArray[0])
+                print("33333333333")
+                print(ack)
+                print("44444444444")
+            }
+        }
     }
 }
 
-//struct GameListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameListView()
-//    }
-//}
-
-
+struct GameListView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameListView()
+    }
+}
 
 struct CreateRoomButton: View {
     @State var presentInGameView = false
+    @Binding var rooms : [Room]
     
     var title: String
     var iconName: String
@@ -41,8 +65,9 @@ struct CreateRoomButton: View {
     var body: some View {
         Button(action: {
             presentInGameView = true
-//            SocketIOManager.shared.createRoom(hostId: "room1", user: user)
-            
+            print("new game")
+            rooms.append(Room(host: Constants.user!, title : "\(Constants.user!.name)의 게임"))
+            SocketIOManager.shared.createRoom(hostId: Constants.user!.id, user: Constants.user!)
         }) {
             HStack() {
                 Image(systemName: iconName)
@@ -63,7 +88,6 @@ struct CreateRoomButton: View {
 struct RoomButtonInListView: View {
     @State private var showModal = false
     var room: Room
-    var user = User(id: "test")
     
     var body: some View {
         
@@ -79,14 +103,21 @@ struct RoomButtonInListView: View {
                     .padding()
                 
                 Spacer()
-                ProfileImage(imageName: room.host.profileImg)
+                ProfileImage(imageName: "Card_10")
                 Text("Name: \(room.host.name)")
                 Text("Win: \(room.host.win)\tLose: \(room.host.lose)")
                 Text("Profile: " + (room.host.profileImg))
                 
                 Button {
-//                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: user)
-                    InGameView()
+                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: Constants.user!)
+                    print("------------------------------------")
+                    print(room.host.id)
+                    SocketIOManager.shared.socket.on("\(room.host.id)") {data, ack in
+                        print("------------------------------------")
+                        print(data)
+                        print(ack)
+                    }
+//                    InGameView()
                 } label: {
                     Text("Enter game")
                 }
