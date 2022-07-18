@@ -20,7 +20,8 @@ struct InitView: View {
             if isFirst {
                 IntroView()
             } else if kakaoTokenValid {
-                MainView()
+//                MainView()
+                InGameView()
             } else {
                 LoginView()
                     .onOpenURL { url in
