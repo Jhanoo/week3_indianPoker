@@ -79,10 +79,10 @@ struct RoomButtonInListView: View {
                     .padding()
                 
                 Spacer()
-                ProfileImage(imageName: room.host.profileImg ?? "Card_10")
+                ProfileImage(imageName: room.host.profileImg)
                 Text("Name: \(room.host.name)")
                 Text("Win: \(room.host.win)\tLose: \(room.host.lose)")
-                Text("Profile: " + (room.host.profileImg ?? "nil"))
+                Text("Profile: " + (room.host.profileImg))
                 
                 Button {
 //                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: user)
