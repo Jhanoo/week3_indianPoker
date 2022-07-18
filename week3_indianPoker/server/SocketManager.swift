@@ -41,19 +41,19 @@ class SocketIOManager: NSObject {
         socket.emit("msg", ["nick": nickname, "msg" : message])
     }
     
-    func enterRoom(roomId : String, user : User) {
+    func enterRoom(hostId : String, user : User) {
         let userData = try? encoder.encode(user)
-        socket.emit("enter", ["roomId" : roomId, "enteredUserData" : userData as Any])
+        socket.emit("enter", ["hostId" : hostId, "enteredUserData" : userData as Any])
     }
     
-    func createRoom(roomId : String, user : User) {
+    func createRoom(hostId : String, user : User) {
         let userData = try? encoder.encode(user)
-        socket.emit("create", ["roomId" : roomId, "enteredUserData" : userData as Any])
+        socket.emit("create", ["hostId" : hostId, "enteredUserData" : userData as Any])
     }
     
-    func startGame(roomId : String, host : User, participant : User) {
+    func startGame(hostId : String, host : User, participant : User) {
         let hostData = try? encoder.encode(host)
         let participantData = try? encoder.encode(host)
-        socket.emit("start", ["roomId" : roomId, "host" : hostData as Any, "participant" : participantData as Any])
+        socket.emit("start", ["hostId" : hostId, "host" : hostData as Any, "participant" : participantData as Any])
     }
 }

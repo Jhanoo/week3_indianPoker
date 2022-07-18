@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 let WHITE = 0
 let PINK = 1
 let RED = 2
@@ -14,7 +15,7 @@ let GREEN = 4
 let BLACK = 5
 
 struct User: Codable {
-    let id: String
+    var id: String
     var name: String = "default"
     var profileImg: String? = nil
     var win: Int = 0
@@ -34,7 +35,6 @@ struct User: Codable {
 
 struct Room: Identifiable, Codable {
     let id = UUID()
-//    let roomId: String
     let host: User
     var participant: User?
     var title: String = "default"
@@ -55,8 +55,9 @@ func addSample(){
     users.append(User(id: "userSample03", name: "Sample03", win: 0, lose: 0, money: 0, chip: [0,0,0,0,0,0]))
     users.append(User(id: "userSample04", name: "Sample04", win: 0, lose: 0, money: 0, chip: [0,0,0,0,0,0]))
     users.append(User(id: "userSample05", name: "Sample05", win: 0, lose: 0, money: 0, chip: [0,0,0,0,0,0]))
-    rooms.append(Room(roomId: "sample00", host: users[0], title: "Sample00's room"))
-    rooms.append(Room(roomId: "sample01", host: users[1], title: "Sample01's room"))
-    rooms.append(Room(roomId: "sample02", host: users[2], title: "Sample02's room"))
-    rooms.append(Room(roomId: "sample03", host: users[3], title: "Sample03's room"))
+    rooms.append(Room(host: users[0], title: "Sample00's room"))
+    rooms.append(Room(host: users[1], title: "Sample01's room"))
+    rooms.append(Room(host: users[2], title: "Sample02's room"))
+    rooms.append(Room(host: users[3], title: "Sample03's room"))
 }
+
