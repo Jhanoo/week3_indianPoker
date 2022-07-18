@@ -79,7 +79,7 @@ struct RoomButtonInListView: View {
                     .padding()
                 
                 Spacer()
-                ProfileImage(imageName: room.host.profileImg)
+                ProfileImage(imageName: "Card_10")
                 Text("Name: \(room.host.name)")
                 Text("Win: \(room.host.win)\tLose: \(room.host.lose)")
                 Text("Profile: " + (room.host.profileImg))
