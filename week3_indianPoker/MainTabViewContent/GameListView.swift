@@ -24,11 +24,11 @@ struct GameListView: View {
     }
 }
 
-//struct GameListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameListView()
-//    }
-//}
+struct GameListView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameListView()
+    }
+}
 
 
 
@@ -86,7 +86,7 @@ struct RoomButtonInListView: View {
                 
                 Button {
 //                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: user)
-                    InGameView()
+//                    InGameView()
                 } label: {
                     Text("Enter game")
                 }

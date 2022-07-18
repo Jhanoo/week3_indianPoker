@@ -19,6 +19,7 @@
 		428BCF612883F82D008A5FC3 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF602883F82D008A5FC3 /* request.swift */; };
 		428BCF632883FAA1008A5FC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF622883FAA1008A5FC3 /* Constants.swift */; };
 		428BCF6728844FF9008A5FC3 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF6628844FF9008A5FC3 /* DataType.swift */; };
+		93BB00562885468700322323 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB00552885468700322323 /* WaitingView.swift */; };
 		93BFD5852885272B0012151B /* InGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BFD5842885272B0012151B /* InGameView.swift */; };
 		93BFD5882885283D0012151B /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BFD5872885283D0012151B /* GameListView.swift */; };
 		93BFD58A288529D60012151B /* BankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BFD589288529D60012151B /* BankView.swift */; };
@@ -40,6 +41,7 @@
 		428BCF6628844FF9008A5FC3 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 		49B88A0B865A716AD1D44781 /* Pods-week3_indianPoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-week3_indianPoker.debug.xcconfig"; path = "Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker.debug.xcconfig"; sourceTree = "<group>"; };
 		57B6FD751B207A1D99195556 /* Pods-week3_indianPoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-week3_indianPoker.release.xcconfig"; path = "Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker.release.xcconfig"; sourceTree = "<group>"; };
+		93BB00552885468700322323 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
 		93BFD5842885272B0012151B /* InGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
 		93BFD5872885283D0012151B /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
 		93BFD589288529D60012151B /* BankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		93BB00542885462F00322323 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				93BFD5842885272B0012151B /* InGameView.swift */,
+				93BB00552885468700322323 /* WaitingView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
 		93BFD586288527E20012151B /* MainTabViewContent */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,11 +141,11 @@
 				4252CD132883D5B1008C0C63 /* LoginView.swift */,
 				4252CD152883D5FB008C0C63 /* MainView.swift */,
 				93BFD586288527E20012151B /* MainTabViewContent */,
+				93BB00542885462F00322323 /* GameView */,
 				428BCF642883FAA9008A5FC3 /* Utils */,
 				93D1DA042883B35500B5BD5A /* Assets.xcassets */,
 				93D1DA062883B35500B5BD5A /* Preview Content */,
 				428BCF6628844FF9008A5FC3 /* DataType.swift */,
-				93BFD5842885272B0012151B /* InGameView.swift */,
 			);
 			path = week3_indianPoker;
 			sourceTree = "<group>";
@@ -280,6 +291,7 @@
 			files = (
 				93BFD58A288529D60012151B /* BankView.swift in Sources */,
 				93BFD58C28852A320012151B /* ProfileView.swift in Sources */,
+				93BB00562885468700322323 /* WaitingView.swift in Sources */,
 				428BCF6728844FF9008A5FC3 /* DataType.swift in Sources */,
 				4252CD162883D5FB008C0C63 /* MainView.swift in Sources */,
 				4252CD142883D5B1008C0C63 /* LoginView.swift in Sources */,
