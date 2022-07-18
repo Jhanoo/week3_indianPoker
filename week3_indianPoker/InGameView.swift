@@ -13,6 +13,8 @@ struct InGameView: View {
     
     var body: some View {
         ZStack{
+            
+            // Timer, Surrender
             VStack{
                 HStack{
                     Spacer()
@@ -25,14 +27,137 @@ struct InGameView: View {
                         .clipShape(Capsule())
                     Spacer().padding()
                 }
+                SurrenderButtonView()
                 Spacer()
             }
+            
+            // 상대방 정보
+            HStack{
+                Spacer().padding()
+                VStack{
+                    Text("Name")
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    
+                    Text("300승 3패")
+                        .font(.system(size: 18, weight: .heavy))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    
+                    
+                    Image(uiImage: UIImage(named: "Card_5")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 140)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    
+                    Spacer()
+                }
+                VStack{
+                    ProfileImage(imageName: "Card_1")
+                    ZStack{
+                        Button(action: {
+                            
+                        }){
+                            Image(uiImage: UIImage(named: "chip")!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                        }
+                        Text("100")
+                            .font(.system(size: 20, weight: .heavy))
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
+                }
+                Spacer()
+            }
+            
+            // 내 정보
+            HStack{
+                Spacer()
+                VStack{
+                    Spacer().padding()
+                    
+                    ZStack{
+                        Button(action: {
+                        }){
+                            Image(uiImage: UIImage(named: "chip")!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                        }
+                        Text("100")
+                            .font(.system(size: 20, weight: .heavy))
+                            .foregroundColor(.white)
+                    }
+                    ProfileImage(imageName: "Card_1")
+                }
+                VStack{
+                    Spacer()
+                    
+                    Image(uiImage: UIImage(named: "Card_back")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 140)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Name22")
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Text("100승 30패")
+                        .font(.system(size: 18, weight: .heavy))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                }
+                
+                VStack{
+                    Spacer()
+                    
+                    Button(action: {
+                        
+                    }){
+                        Text("베팅")
+                            .font(.system(size: 30, weight: .heavy))
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 35)
+                            .padding(.vertical, 5)
+                            .background(.black.opacity(0.75))
+                            .clipShape(Capsule())
+                            .frame(maxWidth: .infinity, alignment: .bottomTrailing)
+                    }
+                    Button(action: {
+                        
+                    }){
+                        Text("다이")
+                            .font(.system(size: 30, weight: .heavy))
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 35)
+                            .padding(.vertical, 5)
+                            .background(.black.opacity(0.75))
+                            .clipShape(Capsule())
+                            .frame(maxWidth: .infinity, alignment: .bottomTrailing)
+                    }
+                }
+                Spacer()
+                
+            }
+            
             
         }.onReceive(timer) { time in
             if timeRemaining > 0 {
                 timeRemaining -= 1
             }
         }
+        .background(
+            Image(uiImage: UIImage(named: "casino_table_only")!)
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+        )
     }
 }
 
@@ -42,3 +167,24 @@ struct InGameView_Previews: PreviewProvider {
     }
 }
 
+
+struct SurrenderButtonView: View {
+    var body: some View {
+        HStack{
+            Spacer()
+            Spacer()
+            Button(action: {
+                
+            }){
+                Image(uiImage: UIImage(systemName: "flag.fill")!)
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50, height: 60)
+                    .accentColor(.white)
+            }
+            Spacer().padding()
+        }
+    }
+}
