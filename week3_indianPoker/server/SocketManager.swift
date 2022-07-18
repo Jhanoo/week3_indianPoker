@@ -48,12 +48,12 @@ class SocketIOManager: NSObject {
     
     func createRoom(roomId : String, user : User) {
         let userData = try? encoder.encode(user)
-        socket.emit("enter", ["roomId" : roomId, "enteredUserData" : userData as Any])
+        socket.emit("create", ["roomId" : roomId, "enteredUserData" : userData as Any])
     }
     
     func startGame(roomId : String, host : User, participant : User) {
         let hostData = try? encoder.encode(host)
         let participantData = try? encoder.encode(host)
-        socket.emit("enter", ["roomId" : roomId, "host" : hostData as Any, "participant" : participantData as Any])
+        socket.emit("start", ["roomId" : roomId, "host" : hostData as Any, "participant" : participantData as Any])
     }
 }

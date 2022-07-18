@@ -10,7 +10,7 @@ import Foundation
 struct Constants {
     // socket
 //    static let IP_ADDRESS = "http://143.248.225.19"
-//    static let IP_ADDRESS = "http://192.249.19.183"
-    static let IP_ADDRESS = "http://localhost"
+    static let IP_ADDRESS = "http://192.249.19.183"
+//    static let IP_ADDRESS = "http://localhost"
     static let PORT_NUM = "80"
 }

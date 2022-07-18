@@ -34,7 +34,7 @@ struct User: Codable {
 
 struct Room: Identifiable, Codable {
     let id = UUID()
-    let roomId: String
+//    let roomId: String
     let host: User
     var participant: User?
     var title: String = "default"

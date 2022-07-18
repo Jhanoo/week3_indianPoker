@@ -25,7 +25,7 @@ struct LoginView: View {
             UserDefaults.standard.setValue(encoded, forKey: "user")
         }
 //        // 내부 저장소에서 꺼내기
-//        if let savedData = UserDefaults.standard.object(forKey: "person") as? Data {
+//        if let savedData = UserDefaults.standard.object(forKey: "user") as? Data {
 //            if let savedObject = try? JSONDecoder().decode(User.self, from: savedData) {
 //                print(savedObject)
 //            }
