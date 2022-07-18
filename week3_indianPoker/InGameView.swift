@@ -59,14 +59,12 @@ struct InGameView: View {
                 VStack{
                     ProfileImage(imageName: "Card_1")
                     ZStack{
-                        Button(action: {
-                            
-                        }){
-                            Image(uiImage: UIImage(named: "chip")!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                        }
+                        
+                        Image(uiImage: UIImage(named: "chip")!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                        
                         Text("100")
                             .font(.system(size: 20, weight: .heavy))
                             .foregroundColor(.white)
@@ -75,12 +73,36 @@ struct InGameView: View {
                 }
                 Spacer()
             }
-            
-            Text("Round \(round)")
-                .font(.system(size: 30, weight: .heavy))
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, alignment: .center)
-            
+            VStack{
+                Spacer()
+                ZStack{
+                    Image(uiImage: UIImage(named: "chip")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
+                    Text("0")
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(.white)
+                }
+                Spacer()
+                
+                Text("Round \(round)")
+                    .font(.system(size: 28, weight: .heavy))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
+                Spacer()
+                ZStack{
+                    Image(uiImage: UIImage(named: "chip")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
+                    Text("0")
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(.white)
+                }
+                Spacer()
+            }.frame(width: .infinity, height: 250)
             // 내 정보
             HStack{
                 Spacer()
@@ -176,14 +198,15 @@ struct InGameView_Previews: PreviewProvider {
 
 
 struct SurrenderButtonView: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         HStack{
             Spacer()
             Spacer()
             Button(action: {
-                
+                presentationMode.wrappedValue.dismiss()
             }){
-                Image(uiImage: UIImage(systemName: "flag.fill")!)
+                Image(systemName: "flag.fill")
                     .resizable()
                     .renderingMode(.template)
                     .foregroundColor(.white)
@@ -195,3 +218,4 @@ struct SurrenderButtonView: View {
         }
     }
 }
+
