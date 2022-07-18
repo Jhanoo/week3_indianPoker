@@ -16,8 +16,8 @@ let BLACK = 5
 
 struct User: Codable {
     var id: String
-    var name: String = "default"
-    var profileImg: String? = nil
+    var name: String = "null"
+    var profileImg: String = "null"
     var win: Int = 0
     var lose: Int = 0
     var money: Int = 0

@@ -16,6 +16,7 @@
 		4252CD142883D5B1008C0C63 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252CD132883D5B1008C0C63 /* LoginView.swift */; };
 		4252CD162883D5FB008C0C63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252CD152883D5FB008C0C63 /* MainView.swift */; };
 		4252CD182883DB50008C0C63 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252CD172883DB50008C0C63 /* SocketManager.swift */; };
+		427E5063288543FD0005A1B2 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427E5062288543FD0005A1B2 /* Functions.swift */; };
 		428BCF612883F82D008A5FC3 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF602883F82D008A5FC3 /* request.swift */; };
 		428BCF632883FAA1008A5FC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF622883FAA1008A5FC3 /* Constants.swift */; };
 		428BCF6728844FF9008A5FC3 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428BCF6628844FF9008A5FC3 /* DataType.swift */; };
@@ -36,6 +37,7 @@
 		4252CD132883D5B1008C0C63 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4252CD152883D5FB008C0C63 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4252CD172883DB50008C0C63 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		427E5062288543FD0005A1B2 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		428BCF602883F82D008A5FC3 /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
 		428BCF622883FAA1008A5FC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		428BCF6628844FF9008A5FC3 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				428BCF622883FAA1008A5FC3 /* Constants.swift */,
+				427E5062288543FD0005A1B2 /* Functions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				93D1DA042883B35500B5BD5A /* Assets.xcassets */,
 				93D1DA062883B35500B5BD5A /* Preview Content */,
 				428BCF6628844FF9008A5FC3 /* DataType.swift */,
+				93BFD5842885272B0012151B /* InGameView.swift */,
 			);
 			path = week3_indianPoker;
 			sourceTree = "<group>";
@@ -295,6 +299,7 @@
 				428BCF6728844FF9008A5FC3 /* DataType.swift in Sources */,
 				4252CD162883D5FB008C0C63 /* MainView.swift in Sources */,
 				4252CD142883D5B1008C0C63 /* LoginView.swift in Sources */,
+				427E5063288543FD0005A1B2 /* Functions.swift in Sources */,
 				428BCF612883F82D008A5FC3 /* request.swift in Sources */,
 				4252CD102883D53A008C0C63 /* InitView.swift in Sources */,
 				4252CD122883D583008C0C63 /* IntroView.swift in Sources */,
