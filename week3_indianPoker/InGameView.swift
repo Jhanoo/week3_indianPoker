@@ -9,6 +9,8 @@ import SwiftUI
 
 struct InGameView: View {
     @State private var timeRemaining = 10
+    @State var round = 1
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -73,6 +75,11 @@ struct InGameView: View {
                 }
                 Spacer()
             }
+            
+            Text("Round \(round)")
+                .font(.system(size: 30, weight: .heavy))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .center)
             
             // 내 정보
             HStack{
