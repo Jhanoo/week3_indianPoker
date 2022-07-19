@@ -55,6 +55,11 @@ class SocketIOManager: NSObject {
         socket.emit("create", ["hostId" : hostId, "enteredUserData" : userData as Any])
     }
     
+    func removeRoom(hostId : String, user: User) {
+        let userData = try? encoder.encode(user)
+        socket.emit("remove", ["hostId" : hostId, "enteredUserData" : userData as Any])
+    }
+    
     func startGame(hostId : String, host : User, participant : User) {
         let hostData = try? encoder.encode(host)
         let participantData = try? encoder.encode(host)
