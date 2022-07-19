@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-private var user = User(id: "userSample00", name: "Sample00", win: 0, lose: 0, money: 0, chip: [0,0,0,0,0,0])
+private var user = User(id: "userSample00", name: "Sample00", win: 0, lose: 0)
 
 struct ProfileView: View {
     
@@ -33,26 +33,10 @@ struct ProfileView: View {
                             Spacer(minLength: 100)
                             Text(String(user.lose))
                         }
-                        HStack {
-                            Text("Money: ")
-                            Spacer(minLength: 100)
-                            Text(String(user.money))
-                        }
-//                        HStack {
-//                            Text("Chip: ")
-//                            Spacer(minLength: 100)
-//                            Text(String(user.chip))
-//                        }
                     }
                 }
             }
             .navigationTitle("Profile")
-//            .toolbar {
-//                ToolbarItemGroup(placement: .navigationBarTrailing)
-//                {
-//
-//                }
-//            }
         }
     }
 }

@@ -29,12 +29,6 @@ struct MainView: View {
                     Text("Game")
                 }
             
-            BankView()
-                .tabItem {
-                    Image(systemName: "dollarsign.square")
-                    Text("Bank")
-                }
-            
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")

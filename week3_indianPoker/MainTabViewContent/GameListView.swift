@@ -24,24 +24,23 @@ struct GameListView: View {
     }
 }
 
-//struct GameListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameListView()
-//    }
-//}
+struct GameListView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameListView()
+    }
+}
 
 
 
 struct CreateRoomButton: View {
-    @State var presentInGameView = false
+    //    @State var presentInGameView = false
     
     var title: String
     var iconName: String
     
     var body: some View {
         Button(action: {
-            presentInGameView = true
-//            SocketIOManager.shared.createRoom(hostId: "room1", user: user)
+            //            SocketIOManager.shared.createRoom(hostId: "room1", user: user)
             
         }) {
             HStack() {
@@ -61,39 +60,52 @@ struct CreateRoomButton: View {
 }
 
 struct RoomButtonInListView: View {
-    @State private var showModal = false
+    @State private var isPresented = false
     var room: Room
     var user = User(id: "test")
     
     var body: some View {
-        
-        Button(action: {
-            self.showModal = true
+        VStack{
+            Text("\(room.title)")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
             
-        }){
-            Text("\(room.title)").accentColor(.black)
-        }
-        .sheet(isPresented: self.$showModal) {
-            VStack{
-                Text("\(room.title)")
-                    .padding()
-                
-                Spacer()
+            Spacer()
+            HStack{
                 ProfileImage(imageName: "Card_10")
-                Text("Name: \(room.host.name)")
-                Text("Win: \(room.host.win)\tLose: \(room.host.lose)")
-                Text("Profile: " + (room.host.profileImg))
-                
-                Button {
-//                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: user)
-                    InGameView()
-                } label: {
-                    Text("Enter game")
+                VStack{
+                    Spacer()
+                    Text("Name: \(room.host.name)")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
+                    Text("Win: \(room.host.win)\tLose: \(room.host.lose)")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer().padding()
                 }
-                Spacer()
             }
+            Button {
+                //                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: user)
+                isPresented.toggle()
+            } label: {
+                Text("Enter game")
+            }
+            .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView.init)
+            
+            Spacer()
         }
-        
-        
+    }
+    
+}
+
+struct FullScreenModalView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        ZStack {
+            Color.primary.edgesIgnoringSafeArea(.all)
+            InGameView()
+        }
     }
 }
+
+
