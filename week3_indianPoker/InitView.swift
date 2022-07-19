@@ -58,9 +58,7 @@ struct InitView: View {
                         kakaoTokenValid = true
                         UserApi.shared.me { tmpUser, Error in
                             request("/auth/signin", "POST", ["id": String((tmpUser?.id)!)]) { (success, data) in
-                                print(data)
                                 let output = try? JSONDecoder().decode(User.self, from: data as! Data)
-                                print(output!.name)
                                 Constants.user = output
                                 saveAppStorage(output!)
                                 kakaoTokenValid = true

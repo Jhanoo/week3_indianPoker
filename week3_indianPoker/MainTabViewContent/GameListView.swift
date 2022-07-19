@@ -22,28 +22,15 @@ struct GameListView: View {
         }
         .onAppear {
             SocketIOManager.shared.socket.on("rooms") { dataArray, ack in
-                print("22222222222")
-                
-//                for i in dataArray {
-//                    let json = try? JSONSerialization.data(withJSONObject: i, options: .fragmentsAllowed)
-//                    let jsonData = try? JSONDecoder().decode(RoomData.self, from: json!)
-//                    print(jsonData)
-//                }
-                
-                let jsonData = try? JSONDecoder().decode(RoomsArr.self, from: dataArray[0] as? RoomsArr )
-                print(jsonData)
-//                let output = try? JSONDecoder().decode(RoomsArr.self, from: dataArray[0] as! Data)
-//                    print(output)
-//                var rooms : [RoomData] = []
-//                for i in dataArray {
-//                    let output = try? JSONDecoder().decode(dataArray, from: i)
-//                    rooms.append(output!)
-//                }
-//                print(rooms)
-//                print(dataArray[0])
-                print("33333333333")
-                print(ack)
-                print("44444444444")
+                rooms = []
+                let datas = dataArray[0] as! [[String : [String : Any]]]
+                for data in datas {
+                    let h = data["host"]!
+                    let host = User(id: h["id"] as! String, name: h["name"] as! String, profileImg: h["profileImg"]! as! String, win: h["win"] as! Int, lose:h["lose"] as! Int)
+                    print(host.profileImg)
+                    let room = Room(host: host, title : "\(host.name)의 게임")
+                    rooms.append(room)
+                }
             }
         }
     }
@@ -103,24 +90,29 @@ struct RoomButtonInListView: View {
                     .padding()
                 
                 Spacer()
-                ProfileImage(imageName: "Card_10")
+                AsyncImage(url: URL(string: (room.host.profileImg)), content: { image in
+                    image.resizable()
+                         .aspectRatio(contentMode: .fit)
+                         .frame(maxWidth: 300, maxHeight: 100)
+                },
+                           placeholder: {
+                    ProgressView()
+                })
                 Text("Name: \(room.host.name)")
                 Text("Win: \(room.host.win)\tLose: \(room.host.lose)")
-                Text("Profile: " + (room.host.profileImg))
                 
                 Button {
                     SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: Constants.user!)
-                    print("------------------------------------")
-                    print(room.host.id)
                     SocketIOManager.shared.socket.on("\(room.host.id)") {data, ack in
-                        print("------------------------------------")
-                        print(data)
-                        print(ack)
                     }
 //                    InGameView()
                 } label: {
                     Text("Enter game")
                 }
+                .padding(10)
+                .foregroundColor(.white)
+                .background(Color.green)
+                .cornerRadius(20)
                 Spacer()
             }
         }
