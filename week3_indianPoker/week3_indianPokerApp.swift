@@ -20,6 +20,7 @@ struct week3_indianPokerApp: App {
     var body: some Scene {
         WindowGroup {
             InitView()
+//            socketTestView()
         }
     }
 }

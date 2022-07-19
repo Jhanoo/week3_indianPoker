@@ -29,8 +29,8 @@ struct IntroView: View {
             GeometryReader{ proxy in
                 VStack {
                     TabView {
-                        ForEach(1..<numberOfPages+1) { num in
-                            IntroSlideView(num)
+                        ForEach(0..<numberOfPages) { num in
+                            IntroSlideView(num+1, numberOfPages, $endIntro)
                         }
                     }.tabViewStyle(PageTabViewStyle())
                         .frame(width: proxy.size.width, height: proxy.size.height)

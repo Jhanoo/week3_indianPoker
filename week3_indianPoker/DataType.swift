@@ -35,18 +35,9 @@ struct Room: Identifiable, Codable {
     }
 }
 
-var users: [User] = []
-var rooms: [Room] = []
-func addSample(){
-    users.append(User(id: "userSample00", name: "Sample00", win: 0, lose: 0))
-    users.append(User(id: "userSample01", name: "Sample01", win: 0, lose: 0))
-    users.append(User(id: "userSample02", name: "Sample02", win: 0, lose: 0))
-    users.append(User(id: "userSample03", name: "Sample03", win: 0, lose: 0))
-    users.append(User(id: "userSample04", name: "Sample04", win: 0, lose: 0))
-    users.append(User(id: "userSample05", name: "Sample05", win: 0, lose: 0))
-    rooms.append(Room(host: users[0], title: "Sample00's room"))
-    rooms.append(Room(host: users[1], title: "Sample01's room"))
-    rooms.append(Room(host: users[2], title: "Sample02's room"))
-    rooms.append(Room(host: users[3], title: "Sample03's room"))
-}
+//struct GameData : Codable {
+//    turn
+//    chip
+//    
+//}
 

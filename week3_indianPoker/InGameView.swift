@@ -15,7 +15,6 @@ struct InGameView: View {
     
     var body: some View {
         ZStack{
-            
             // Timer, Surrender
             VStack{
                 HStack{
@@ -152,7 +151,7 @@ struct InGameView: View {
                     Spacer()
                     
                     Button(action: {
-                        
+                        SocketIOManager.shared.bet(hostBet: 13, guestBet: 15)
                     }){
                         Text("베팅")
                             .font(.system(size: 30, weight: .heavy))
@@ -164,7 +163,7 @@ struct InGameView: View {
                             .frame(maxWidth: .infinity, alignment: .bottomTrailing)
                     }
                     Button(action: {
-                        
+                        SocketIOManager.shared.die(hostDie: true, guestDie: false)
                     }){
                         Text("다이")
                             .font(.system(size: 30, weight: .heavy))
@@ -181,12 +180,19 @@ struct InGameView: View {
             }
             
             
-        }.onReceive(timer) { time in
+        }.onAppear {
+            SocketIOManager.shared.socket.on("gameinfo") {data, ack in
+                let datas = data[0] as! [String : [String : [ Int : Any]]]
+                print(datas)
+            }
+        }
+        .onReceive(timer) { time in
             if timeRemaining > 0 {
                 timeRemaining -= 1
             }
             else if(timeRemaining == 0){
                 timeRemaining = 10
+                SocketIOManager.shared.timeOut(hostTimeout: true, guestTimeout: false)
             }
         }
         .background(

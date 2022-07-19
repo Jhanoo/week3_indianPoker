@@ -22,12 +22,15 @@ struct GameListView: View {
         }
         .onAppear {
             SocketIOManager.shared.socket.on("rooms") { dataArray, ack in
-                rooms = []
                 let datas = dataArray[0] as! [[String : [String : Any]]]
                 for data in datas {
                     let h = data["host"]!
+                    for room in rooms {
+                        if(room.host.id == h["id"] as! String) {
+                            return
+                        }
+                    }
                     let host = User(id: h["id"] as! String, name: h["name"] as! String, profileImg: h["profileImg"]! as! String, win: h["win"] as! Int, lose:h["lose"] as! Int)
-                    print(host.profileImg)
                     let room = Room(host: host, title : "\(host.name)의 게임")
                     rooms.append(room)
                 }
@@ -104,8 +107,6 @@ struct RoomButtonInListView: View {
                 SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: Constants.user!)
                 SocketIOManager.shared.socket.on("\(room.host.id)") {data, ack in
                 }
-                //                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: user)
-                isPresented.toggle()
             } label: {
                 Text("Enter game")
             }

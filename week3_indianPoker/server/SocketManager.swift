@@ -60,4 +60,21 @@ class SocketIOManager: NSObject {
         let participantData = try? encoder.encode(host)
         socket.emit("start", ["hostId" : hostId, "host" : hostData as Any, "participant" : participantData as Any])
     }
+    
+    func removeRoom(hostId : String, user: User) {
+        let userData = try? encoder.encode(user)
+        socket.emit("remove", ["hostId" : hostId, "enteredUserData" : userData as Any])
+      }
+    
+    func bet(hostBet : Int, guestBet: Int) {
+        socket.emit("bet", ["0" : hostBet, "1" : guestBet])
+    }
+    
+    func die(hostDie : Bool, guestDie: Bool) {
+        socket.emit("die", ["0" : hostDie, "1" : guestDie])
+    }
+    
+    func timeOut(hostTimeout : Bool, guestTimeout : Bool) {
+        socket.emit("timeout", ["0" : hostTimeout, "1" : guestTimeout])
+    }
 }
