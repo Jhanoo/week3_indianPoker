@@ -75,6 +75,7 @@ struct InGameView: View {
             }
             VStack{
                 Spacer()
+                // 상대 칩
                 ZStack{
                     Image(uiImage: UIImage(named: "chip")!)
                         .resizable()
@@ -92,6 +93,7 @@ struct InGameView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 Spacer()
+                // 내 칩
                 ZStack{
                     Image(uiImage: UIImage(named: "chip")!)
                         .resizable()
@@ -102,7 +104,9 @@ struct InGameView: View {
                         .foregroundColor(.white)
                 }
                 Spacer()
-            }.frame(width: .infinity, height: 250)
+            }
+            .frame(height: 250)
+            
             // 내 정보
             HStack{
                 Spacer()
@@ -111,6 +115,7 @@ struct InGameView: View {
                     
                     ZStack{
                         Button(action: {
+                            
                         }){
                             Image(uiImage: UIImage(named: "chip")!)
                                 .resizable()
@@ -179,6 +184,9 @@ struct InGameView: View {
         }.onReceive(timer) { time in
             if timeRemaining > 0 {
                 timeRemaining -= 1
+            }
+            else if(timeRemaining == 0){
+                timeRemaining = 10
             }
         }
         .background(
