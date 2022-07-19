@@ -9,7 +9,11 @@ import SwiftUI
 
 struct InGameView: View {
     @State private var timeRemaining = 10
+    @State private var isStart = false
     @State var round = 1
+    @Binding var rooms : [Room]
+    @State private var showingDieAlert = false
+    @Binding var isHost : Bool
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -28,7 +32,7 @@ struct InGameView: View {
                         .clipShape(Capsule())
                     Spacer().padding()
                 }
-                SurrenderButtonView()
+                SurrenderButtonView(rooms: $rooms)
                 Spacer()
             }
             
@@ -164,6 +168,7 @@ struct InGameView: View {
                     }
                     Button(action: {
                         SocketIOManager.shared.die(hostDie: true, guestDie: false)
+                        showingDieAlert = true
                     }){
                         Text("다이")
                             .font(.system(size: 30, weight: .heavy))
@@ -173,6 +178,16 @@ struct InGameView: View {
                             .background(.black.opacity(0.75))
                             .clipShape(Capsule())
                             .frame(maxWidth: .infinity, alignment: .bottomTrailing)
+                    }
+                    .alert("라운드 포기", isPresented: $showingDieAlert) {
+                        Button("취소"){}
+                        Button(action: {
+                            
+                        }) {
+                            Text("DIE").foregroundColor(.red)
+                        }
+                    } message: {
+                        Text("정말로 DIE 하시겠습니까?")
                     }
                 }
                 Spacer()
@@ -204,21 +219,18 @@ struct InGameView: View {
     }
 }
 
-struct InGameView_Previews: PreviewProvider {
-    static var previews: some View {
-        InGameView()
-    }
-}
-
 
 struct SurrenderButtonView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Binding var rooms: [Room]
+    @State private var showingAlert = false
+    
     var body: some View {
         HStack{
             Spacer()
             Spacer()
             Button(action: {
-                presentationMode.wrappedValue.dismiss()
+                showingAlert = true
             }){
                 Image(systemName: "flag.fill")
                     .resizable()
@@ -228,6 +240,23 @@ struct SurrenderButtonView: View {
                     .frame(width: 50, height: 60)
                     .accentColor(.white)
             }
+            .alert({
+                Text("게임 항복")
+            }(), isPresented: $showingAlert) {
+                Button("취소"){}
+                Button("나가기") {
+                    for i in 0...(rooms.count-1) {
+                        if(rooms[i].host.id == Constants.user?.id){
+                            rooms.remove(at: i)
+                            SocketIOManager.shared.removeRoom(hostId: Constants.user!.id, user: Constants.user!)
+                        }
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                }
+            } message: {
+                Text("게임을 항복하고 나가시겠습니까?")
+            }
+            
             Spacer().padding()
         }
     }
