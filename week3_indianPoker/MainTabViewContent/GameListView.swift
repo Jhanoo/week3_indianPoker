@@ -43,7 +43,6 @@ struct GameListView_Previews: PreviewProvider {
 }
 
 struct CreateRoomButton: View {
-    @State var presentInGameView = false
     @Binding var rooms : [Room]
     
     var title: String
@@ -51,8 +50,6 @@ struct CreateRoomButton: View {
     
     var body: some View {
         Button(action: {
-            presentInGameView = true
-            print("new game")
             rooms.append(Room(host: Constants.user!, title : "\(Constants.user!.name)의 게임"))
             SocketIOManager.shared.createRoom(hostId: Constants.user!.id, user: Constants.user!)
         }) {
@@ -82,41 +79,31 @@ struct RoomButtonInListView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
             
-        }){
-            Text("\(room.title)").accentColor(.black)
-        }
-        .sheet(isPresented: self.$showModal) {
-            VStack{
-                Text("\(room.title)")
-                    .padding()
-                
-                Spacer()
+            Spacer()
+            HStack{
                 AsyncImage(url: URL(string: (room.host.profileImg)), content: { image in
                     image.resizable()
                          .aspectRatio(contentMode: .fit)
                          .frame(maxWidth: 300, maxHeight: 100)
+                         .cornerRadius(20)
                 },
                            placeholder: {
                     ProgressView()
                 })
-                Text("Name: \(room.host.name)")
-                Text("Win: \(room.host.win)\tLose: \(room.host.lose)")
-                
-                Button {
-                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: Constants.user!)
-                    SocketIOManager.shared.socket.on("\(room.host.id)") {data, ack in
-                    }
-//                    InGameView()
-                } label: {
-                    Text("Enter game")
+                VStack{
+                    Spacer()
+                    Text("Name: \(room.host.name)")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
+                    Text("Win: \(room.host.win)\tLose: \(room.host.lose)")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer().padding()
                 }
-                .padding(10)
-                .foregroundColor(.white)
-                .background(Color.green)
-                .cornerRadius(20)
-                Spacer()
             }
             Button {
+                SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: Constants.user!)
+                SocketIOManager.shared.socket.on("\(room.host.id)") {data, ack in
+                }
                 //                    SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: user)
                 isPresented.toggle()
             } label: {
