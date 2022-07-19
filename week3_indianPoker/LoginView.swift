@@ -62,7 +62,7 @@ struct LoginView: View {
                                 } else {
                                     print("✅ loginWithKakaoTalk() success")
                                     UserApi.shared.me { tmpUser, Error in
-                                        let user = User(id: String((tmpUser?.id)!), name: (tmpUser?.kakaoAccount?.profile?.nickname)!, profileImg : "\(String(describing: tmpUser?.kakaoAccount?.profile?.profileImageUrl))")
+                                        let user = User(id: String((tmpUser?.id)!), name: (tmpUser?.kakaoAccount?.profile?.nickname)!, profileImg : "\(String(describing: (tmpUser?.kakaoAccount?.profile?.profileImageUrl)!))")
                                         // 내부 저장소 저장
                                         saveAppStorage(user)
                                         // 전역 변수 저장
@@ -88,7 +88,7 @@ struct LoginView: View {
                                 } else {
                                     print("✅ loginWithKakaoTalkAccount() success")
                                     UserApi.shared.me { tmpUser, Error in
-                                        let user = User(id: String((tmpUser?.id)!), name: (tmpUser?.kakaoAccount?.profile?.nickname)!, profileImg : "\(String(describing: tmpUser?.kakaoAccount?.profile?.profileImageUrl))")
+                                        let user = User(id: String((tmpUser?.id)!), name: (tmpUser?.kakaoAccount?.profile?.nickname)!, profileImg : "\(String(describing: (tmpUser?.kakaoAccount?.profile?.profileImageUrl)!))")
                                         // 내부 저장소 저장
                                         saveAppStorage(user)
                                         // 전역 변수 저장
@@ -107,12 +107,19 @@ struct LoginView: View {
                             }
                         }
                     } label: {
-                        Text("kakao Login")
+                        Image("kakao_logo")
+                            .resizable()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .padding(12)
+                        Spacer()
+                        Text("Login with Kakao")
+                        Spacer()
                     }
-                    .frame(width: 300, height: 10)
+                    .frame(width: 300, height: 20)
                     .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(5.0)
+                    .background(Color.kakaoYellow)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(12.0)
                     .padding(.bottom, 20)
                 }
                 

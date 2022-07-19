@@ -14,7 +14,7 @@ struct User: Codable {
     var win: Int = 0
     var lose: Int = 0
     
-    mutating func updateUser(name: String, profileImg: String, win: Int, lose: Int, money: Int, chip: Int){
+    mutating func updateUser(name: String, profileImg: String, win: Int, lose: Int){
         self.name = name
         self.profileImg = profileImg
         self.win = win

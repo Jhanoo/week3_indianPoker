@@ -13,15 +13,6 @@ struct Response: Codable {
     let message: String
 }
 
-//struct User: Codable {
-//    var id: String
-//    var name: String = "null"
-//    var profileImg: String = "null"
-//    var win: Int = 0
-//    var lose: Int = 0
-//    var money: Int = 0
-//    var chip: [Int] = [0,0,0,0,0,0]
-
 /* Body가 없는 요청 */
 func requestGet(url: String, completionHandler: @escaping (Bool, Any) -> Void) {
     
