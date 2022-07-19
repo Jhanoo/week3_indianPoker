@@ -9,9 +9,11 @@ import SwiftUI
 
 struct InGameView: View {
     @State private var timeRemaining = 10
+    @State private var isStart = false
     @State var round = 1
     @Binding var rooms : [Room]
     @State private var showingDieAlert = false
+    @Binding var isHost : Bool
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -193,11 +195,12 @@ struct InGameView: View {
             
             
         }.onReceive(timer) { time in
-            if timeRemaining > 0 {
+            if (timeRemaining > 0 && isStart) {
                 timeRemaining -= 1
             }
             else if(timeRemaining == 0){
                 timeRemaining = 10
+                isStart = false
             }
         }
         .background(
@@ -230,7 +233,9 @@ struct SurrenderButtonView: View {
                     .frame(width: 50, height: 60)
                     .accentColor(.white)
             }
-            .alert("게임 항복", isPresented: $showingAlert) {
+            .alert({
+                Text("게임 항복")
+            }(), isPresented: $showingAlert) {
                 Button("취소"){}
                 Button("나가기") {
                     for i in 0...(rooms.count-1) {

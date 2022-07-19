@@ -48,6 +48,7 @@ struct GameListView_Previews: PreviewProvider {
 struct CreateRoomButton: View {
     @State private var isPresented = false
     @Binding var rooms : [Room]
+    @State var isHost = true
     
     var title: String
     var iconName: String
@@ -70,7 +71,7 @@ struct CreateRoomButton: View {
             .cornerRadius(20)
         }
         .fullScreenCover(isPresented: $isPresented, content: {
-            FullScreenModalView(rooms: $rooms)
+            FullScreenModalView(rooms: $rooms, isHost: $isHost)
         })
         .frame(maxHeight: .infinity, alignment: .bottomTrailing)
         .padding(10)
@@ -80,6 +81,7 @@ struct CreateRoomButton: View {
 struct RoomButtonInListView: View {
     @State private var isPresented = false
     @Binding var rooms: [Room]
+    @State var isHost = false
     var room: Room
     
     var body: some View {
@@ -110,13 +112,14 @@ struct RoomButtonInListView: View {
             Button {
                 SocketIOManager.shared.enterRoom(hostId: "\(room.host.id)", user: Constants.user!)
                 SocketIOManager.shared.socket.on("\(room.host.id)") {data, ack in
+                    
                 }
                 isPresented.toggle()
             } label: {
                 Text("Enter game")
             }
             .fullScreenCover(isPresented: $isPresented, content: {
-                FullScreenModalView(rooms: $rooms)
+                FullScreenModalView(rooms: $rooms, isHost: $isHost)
             })
             Spacer()
         }
@@ -127,11 +130,12 @@ struct RoomButtonInListView: View {
 struct FullScreenModalView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var rooms : [Room]
+    @Binding var isHost : Bool
     
     var body: some View {
         ZStack {
             Color.primary.edgesIgnoringSafeArea(.all)
-            InGameView(rooms: $rooms)
+            InGameView(rooms: $rooms, isHost: $isHost)
         }
     }
 }
