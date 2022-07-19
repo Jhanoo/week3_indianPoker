@@ -74,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4200C3AF2886712F002816DD /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				4252CD112883D583008C0C63 /* IntroView.swift */,
+				4200C3AD28866B30002816DD /* IntroSlideView.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		428BCF642883FAA9008A5FC3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,8 +156,7 @@
 				93D1DA002883B35400B5BD5A /* week3_indianPokerApp.swift */,
 				428BCF652883FD47008A5FC3 /* server */,
 				4252CD0F2883D53A008C0C63 /* InitView.swift */,
-				4252CD112883D583008C0C63 /* IntroView.swift */,
-				4200C3AD28866B30002816DD /* IntroSlideView.swift */,
+				4200C3AF2886712F002816DD /* Intro */,
 				4252CD132883D5B1008C0C63 /* LoginView.swift */,
 				93BFD586288527E20012151B /* MainTabViewContent */,
 				93BB00542885462F00322323 /* GameView */,

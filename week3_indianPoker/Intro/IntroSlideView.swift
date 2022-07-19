@@ -25,8 +25,8 @@ struct IntroSlideView: View {
     }
 }
 
-//struct IntroSlideView_Previews: PreviewProvider {
-//    static var previews: some View {
-////        IntroSlideView(num)
-//    }
-//}
+struct IntroSlideView_Previews: PreviewProvider {
+    static var previews: some View {
+        IntroSlideView(1)
+    }
+}

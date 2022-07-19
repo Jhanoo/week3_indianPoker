@@ -13,7 +13,7 @@ import KakaoSDKUser
 struct IntroView: View {
     @State private var endIntro = false
     @State private var pageNum = 1
-    private var numberOfPages = 13
+    private let numberOfPages = 13
     
     var body: some View {
         if (endIntro) {
