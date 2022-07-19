@@ -12,30 +12,31 @@ import KakaoSDKUser
 
 struct IntroView: View {
     @State private var endIntro = false
+    @State private var pageNum = 1
+    private var numberOfPages = 13
     
     var body: some View {
-            if (endIntro) {
-                LoginView()
-                    .onOpenURL { url in
-                        // 커스텀 URL 스킴 처리
-                        // 앱으로 돌아오기 위한 url
-                        if (AuthApi.isKakaoTalkLoginUrl(url)) {
-                            _ = AuthController.handleOpenUrl(url: url)
-                        }
+        if (endIntro) {
+            LoginView()
+                .onOpenURL { url in
+                    // 커스텀 URL 스킴 처리
+                    // 앱으로 돌아오기 위한 url
+                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                        _ = AuthController.handleOpenUrl(url: url)
                     }
-            } else {
+                }
+        } else {
+            GeometryReader{ proxy in
                 VStack {
-                    Spacer()
-                    Text("Intro")
-                    Spacer()
-                    Button {
-                        endIntro = true
-                    } label: {
-                        Text("Go Login")
-                    }
-                    Spacer()
+                    TabView {
+                        ForEach(1..<numberOfPages+1) { num in
+                            IntroSlideView(num)
+                        }
+                    }.tabViewStyle(PageTabViewStyle())
+                        .frame(width: proxy.size.width, height: proxy.size.height)
                 }
             }
+        }
     }
 }
 
@@ -44,3 +45,5 @@ struct IntroView_Previews: PreviewProvider {
         IntroView()
     }
 }
+
+

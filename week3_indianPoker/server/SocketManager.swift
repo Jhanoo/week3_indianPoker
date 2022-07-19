@@ -25,6 +25,10 @@ class SocketIOManager: NSObject {
         socket.on("connection") { dataArray, ack in
             print(dataArray)
         }
+        
+//        socket.on("rooms") { data, ack in
+//            print(data)
+//        }
     }
 
     func establishConnection() {

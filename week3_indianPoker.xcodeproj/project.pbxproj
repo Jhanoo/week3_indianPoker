@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0948F39D69999CD58BB3F8B8 /* Pods_week3_indianPoker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8E9A577090F828170B939B /* Pods_week3_indianPoker.framework */; };
+		4200C3AC2885CC4A002816DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4200C3AB2885CC4A002816DD /* ColorExtension.swift */; };
+		4200C3AE28866B30002816DD /* IntroSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4200C3AD28866B30002816DD /* IntroSlideView.swift */; };
 		4252CD092883C28C008C0C63 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4252CD082883C28C008C0C63 /* KakaoSDKAuth */; };
 		4252CD0B2883C28C008C0C63 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 4252CD0A2883C28C008C0C63 /* KakaoSDKCommon */; };
 		4252CD0D2883C28C008C0C63 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 4252CD0C2883C28C008C0C63 /* KakaoSDKUser */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4200C3AB2885CC4A002816DD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		4200C3AD28866B30002816DD /* IntroSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroSlideView.swift; sourceTree = "<group>"; };
 		4252CD0E2883D044008C0C63 /* week3-indianPoker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "week3-indianPoker-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4252CD0F2883D53A008C0C63 /* InitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
 		4252CD112883D583008C0C63 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -41,6 +45,7 @@
 		428BCF6628844FF9008A5FC3 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 		49B88A0B865A716AD1D44781 /* Pods-week3_indianPoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-week3_indianPoker.debug.xcconfig"; path = "Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker.debug.xcconfig"; sourceTree = "<group>"; };
 		57B6FD751B207A1D99195556 /* Pods-week3_indianPoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-week3_indianPoker.release.xcconfig"; path = "Target Support Files/Pods-week3_indianPoker/Pods-week3_indianPoker.release.xcconfig"; sourceTree = "<group>"; };
+		93BB00552885468700322323 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
 		93BFD5842885272B0012151B /* InGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InGameView.swift; path = ../InGameView.swift; sourceTree = "<group>"; };
 		93BFD5872885283D0012151B /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
 		93BFD58B28852A320012151B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -70,7 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				428BCF622883FAA1008A5FC3 /* Constants.swift */,
+				428BCF6628844FF9008A5FC3 /* DataType.swift */,
 				427E5062288543FD0005A1B2 /* Functions.swift */,
+				4200C3AB2885CC4A002816DD /* ColorExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -95,6 +102,8 @@
 		93BB00542885462F00322323 /* GameView */ = {
 			isa = PBXGroup;
 			children = (
+				4252CD152883D5FB008C0C63 /* MainView.swift */,
+				93BB00552885468700322323 /* WaitingView.swift */,
 				93BFD5842885272B0012151B /* InGameView.swift */,
 			);
 			path = GameView;
@@ -135,13 +144,13 @@
 				428BCF652883FD47008A5FC3 /* server */,
 				4252CD0F2883D53A008C0C63 /* InitView.swift */,
 				4252CD112883D583008C0C63 /* IntroView.swift */,
+				4200C3AD28866B30002816DD /* IntroSlideView.swift */,
 				4252CD132883D5B1008C0C63 /* LoginView.swift */,
-				4252CD152883D5FB008C0C63 /* MainView.swift */,
 				93BFD586288527E20012151B /* MainTabViewContent */,
 				93BB00542885462F00322323 /* GameView */,
 				428BCF642883FAA9008A5FC3 /* Utils */,
-				93D1DA042883B35500B5BD5A /* Assets.xcassets */,
 				93D1DA062883B35500B5BD5A /* Preview Content */,
+				93D1DA042883B35500B5BD5A /* Assets.xcassets */,
 				428BCF6628844FF9008A5FC3 /* DataType.swift */,
 			);
 			path = week3_indianPoker;
@@ -295,8 +304,10 @@
 				4252CD102883D53A008C0C63 /* InitView.swift in Sources */,
 				4252CD122883D583008C0C63 /* IntroView.swift in Sources */,
 				428BCF632883FAA1008A5FC3 /* Constants.swift in Sources */,
+				4200C3AC2885CC4A002816DD /* ColorExtension.swift in Sources */,
 				93BFD5852885272B0012151B /* InGameView.swift in Sources */,
 				4252CD182883DB50008C0C63 /* SocketManager.swift in Sources */,
+				4200C3AE28866B30002816DD /* IntroSlideView.swift in Sources */,
 				93D1DA012883B35400B5BD5A /* week3_indianPokerApp.swift in Sources */,
 				93BFD5882885283D0012151B /* GameListView.swift in Sources */,
 			);
