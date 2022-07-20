@@ -29,13 +29,21 @@ struct IntroSlideView: View {
                     .tag(num)
                 Text(Constants.introDescription[num-1])
                     .padding(20)
+                if num == 1 {
+                    Button {
+                        endIntro = true
+                    } label: {
+                        Text("skip")
+                    }
+                }
+                
                 if num == pages {
                     Button {
                         endIntro = true
                     } label: {
                         Text("로그인하러 가기!")
                     }
-                    .frame(width: 300, height: 20)
+                    .frame(width: 300, height: 40)
                     .background(Color.kakaoYellow)
                     .foregroundColor(Color.black)
                     .cornerRadius(12.0)

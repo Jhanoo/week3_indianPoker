@@ -23,7 +23,8 @@ class SocketIOManager: NSObject {
         socket = self.manager.socket(forNamespace: "/")
         
         socket.on("connection") { dataArray, ack in
-            print(dataArray)
+//            print(dataArray)
+            print("connected")
         }
         
 //        socket.on("rooms") { data, ack in
@@ -55,26 +56,24 @@ class SocketIOManager: NSObject {
         socket.emit("create", ["hostId" : hostId, "enteredUserData" : userData as Any])
     }
     
-    func startGame(hostId : String, host : User, participant : User) {
-        let hostData = try? encoder.encode(host)
-        let participantData = try? encoder.encode(host)
-        socket.emit("start", ["hostId" : hostId, "host" : hostData as Any, "participant" : participantData as Any])
-    }
-    
     func removeRoom(hostId : String, user: User) {
         let userData = try? encoder.encode(user)
-        socket.emit("remove", ["hostId" : hostId, "enteredUserData" : userData as Any])
-      }
-    
-    func bet(hostBet : Int, guestBet: Int) {
-        socket.emit("bet", ["0" : hostBet, "1" : guestBet])
+        socket.emit("delete", ["hostId" : hostId, "enteredUserData" : userData as Any])
     }
     
-    func die(hostDie : Bool, guestDie: Bool) {
-        socket.emit("die", ["0" : hostDie, "1" : guestDie])
+    func startGame() {
+        socket.emit("start", ["game" : "start"])
     }
     
-    func timeOut(hostTimeout : Bool, guestTimeout : Bool) {
-        socket.emit("timeout", ["0" : hostTimeout, "1" : guestTimeout])
+    func bet(bet : Int) {
+        socket.emit("bet", ["bet" : bet])
+    }
+    
+    func die(die : Int) {
+        socket.emit("die", ["die" : die])
+    }
+    
+    func timeOut(timeout : Int) {
+        socket.emit("timeout", ["timeout" : timeout])
     }
 }

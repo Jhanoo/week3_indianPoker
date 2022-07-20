@@ -34,10 +34,3 @@ struct Room: Identifiable, Codable {
         self.onPlaying = true
     }
 }
-
-//struct GameData : Codable {
-//    turn
-//    chip
-//    
-//}
-
