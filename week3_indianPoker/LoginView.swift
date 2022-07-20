@@ -72,7 +72,6 @@ struct LoginView: View {
                                         let jsonString = String(data: userData!, encoding: .utf8)
                                         request("/auth/signup", "POST", ["user": jsonString as Any]) { (success, data) in
                                             let output = try? JSONDecoder().decode(Response.self, from: data as! Data)
-                                            print(output?.result as Any)
                                             kakaoLogin = true
                                             needLogin = false
                                         }
@@ -98,7 +97,6 @@ struct LoginView: View {
                                         let jsonString = String(data: userData!, encoding: .utf8)
                                         request("/auth/signup", "POST", ["user": jsonString as Any]) { (success, data) in
                                             let output = try? JSONDecoder().decode(Response.self, from: data as! Data)
-                                            print(output?.result as Any)
                                             kakaoLogin = true
                                             needLogin = false
                                         }
